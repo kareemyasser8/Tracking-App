@@ -1,0 +1,83 @@
+@import "../Sass/variables";
+
+.navbar {
+  font-family: $font-english-regular;
+  font-size: $display-2;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  justify-content: space-between;
+  padding: 16px 70px;
+  .navbarLogo{
+    display: flex;
+    img{
+      align-items: center;
+      width: 120px;
+    }
+  }
+
+  .navbar-item{
+    font-size: $display-1;
+    display: flex;
+    position: relative;
+    align-items: center;
+    color: $website-dark-gray-color;
+    width: 80px;
+    cursor: pointer;
+  }
+
+  .languages-menu{
+    display: none;
+  }
+
+  .current-lang{
+    font-weight: bolder;
+  }
+
+  .current-lang::after{
+    font-family: "FontAwesome";
+    padding: 0 8px;
+    font-size: 0.7rem;
+    content: "\f078";
+  }
+
+  .navbar-item:hover{
+
+    .languages-menu{
+      width: 70px;
+      padding: 10px;
+      font-size: $display-0;
+      color: $website-black-color;
+      display: flex;
+      flex-direction: column;
+      border-radius: 4px;
+      list-style: none;
+      background-color: white;
+      position: absolute;
+      box-shadow: 0px 0px 15px 0 rgb(0 0 0 / 18%);
+      top:25px;
+      gap: 0.2rem;
+
+      span{
+        padding: 5px 12px;
+      }
+
+      span:hover{
+        background-color: $website-light-gray-color;
+      }
+    }
+
+    .current-lang{
+      color: $website-red-color;
+      font-weight: bolder;
+    }
+
+    .current-lang::after{
+      content: "\f054";
+    }
+  }
+
+
+
+
+}
