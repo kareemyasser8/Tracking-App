@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-shipping-info',
+  selector: 'shipping-info',
   templateUrl: './shipping-info.component.html',
   styleUrls: ['./shipping-info.component.scss']
 })
