@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -7,14 +7,16 @@ import { HttpClient } from '@angular/common/http';
 export class TrackService {
 
   private url = 'https://tracking.bosta.co/shipments/track'
-
-  constructor(private http: HttpClient) {
-
-  }
+  constructor(private http: HttpClient) {}
 
   getTrackInfo(id : string){
+    let headers = new HttpHeaders()
+    .set('content-type', 'application/json')
+    .set('Access-Control-Allow-Origin', '*');
 
-    return this.http.get(this.url + '/' + id);
+    return this.http.get((this.url + '/' + id),{
+      headers: headers
+    });
   }
 }
 
