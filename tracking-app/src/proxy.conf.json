@@ -1,0 +1,7 @@
+{
+  "/api/*": {
+      "target": "https://kareemyasser8.github.io",
+      "secure": false,
+      "logLevel": "debug"
+  }
+}

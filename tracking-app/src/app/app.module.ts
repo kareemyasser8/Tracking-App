@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { TrackService } from './services/track.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
@@ -35,3 +36,4 @@ import { DatePipe } from '@angular/common'
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

@@ -13,6 +13,9 @@ export class TrackService {
   }
 
   getTrackInfo(id : string){
+
     return this.http.get(this.url + '/' + id);
   }
 }
+
+

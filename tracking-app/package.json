@@ -1,4 +1,5 @@
 {
+  "homepage" : "https://kareemyasser8.github.io/Tracking-App",
   "name": "tracking-app",
   "version": "0.0.0",
   "scripts": {
@@ -22,7 +23,6 @@
     "@ngrx/effects": "^14.3.3",
     "@ngrx/store": "^14.3.3",
     "@ngrx/store-devtools": "^14.3.3",
-    "@ngx-translate/core": "^14.0.0",
     "font-awesome": "^4.7.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
