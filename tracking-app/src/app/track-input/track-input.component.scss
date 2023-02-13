@@ -46,12 +46,18 @@
     font-size: $display-0;
     outline: none;
     font-family: $font-english-regular;
+    transition: 500ms ease;
   }
 
   input:focus{
     outline: none;
     border: 1px solid $website-blue-fill-color;
+    transition: 500ms ease;
 
+  }
+
+  button{
+    border: none;
   }
 
   .icon{

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'track-input',
   templateUrl: './track-input.component.html',
@@ -7,9 +6,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrackInputComponent implements OnInit {
 
+  inputTrackNo: string = '';
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  Submit(f): void {
+    this.inputTrackNo = f.value.TrackingNum;
+    console.log(this.inputTrackNo);
+    this.inputTrackNo = '';
   }
 
 }

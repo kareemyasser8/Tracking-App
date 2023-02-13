@@ -1,6 +1,6 @@
 @import "../Sass/variables";
 
-.shippingInfo{
+.shippingInfo-container {
   width: 100%;
   // padding-top: 50px;
   // border: 1px solid red;
@@ -9,56 +9,87 @@
   justify-content: center;
   align-items: center;
   font-family: $font-english-regular;
+  gap: 0.6rem;
 
-  .shippingNo{
-    color: $website-dark-gray-color;
+  .shippingNo {
+    color: #667085;
     font-size: $display-0*1.05;
   }
 
-  .shippingStatus{
-    font-size: $display-2;
-    font-weight: bolder;
-    color: $website-black-color;
-  }
 
-  .shipping-progress-bar{
-    max-width: 680px;
-    width: 80%;
-    height: 7px;
-    margin-top: 20px;
-    // border: 1px solid red;
-    display: grid;
-    gap: 5px;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    .bar1, .bar2, .bar3{
-      background-color: $website-blue-fill-color;
+  .shipping-result {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    .shippingStatus {
+      font-size: $display-2;
+      font-weight: bolder;
+      color: $website-black-color;
     }
 
-    .bar1{
-      border-top-left-radius: 5px;
-      border-bottom-left-radius: 5px;
+    .shipping-progress-bar {
+      max-width: 680px;
+      width: 80%;
+      height: 7px;
+      margin-top: 20px;
+      // border: 1px solid red;
+      display: grid;
+      gap: 5px;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr;
+
+      .bar1,
+      .bar2,
+      .bar3 {
+        background-color: $website-blue-fill-color;
+      }
+
+      .bar1 {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+
+      .bar3 {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
     }
 
-    .bar3{
-      border-top-right-radius: 5px;
-      border-bottom-right-radius: 5px;
+    .shipping-time {
+      margin-top: 30px;
+      width: 80%;
+      text-align: center;
+      color: $website-black-color;
+      // border: 1px solid red;
+      font-size: $display-1;
     }
+
+    .last-update {
+      margin-top: 10px;
+      color: $website-dark-gray-color;
+      font-size: $display-0;
+    }
+
   }
 
-  .shipping-time{
-    margin-top: 30px;
-    width: 80%;
-    text-align: center;
-    color: $website-black-color;
-    // border: 1px solid red;
-    font-size: $display-1;
-  }
-
-  .last-update{
-    margin-top: 10px;
-    color: $website-dark-gray-color;
+  .error-box {
+    max-width: 60%;
+    width: 100%;
     font-size: $display-0;
+    padding: 25px;
+    border-radius: 5px;
+    display: flex;
+    background-color: $website-error-color-bg;
+    border: 1px solid $website-error-color-border;
+    i{
+      color: $website-red-color;
+      margin-top: 3px;
+      margin-right: 5px;
+    }
   }
 
 }

@@ -1,24 +1,35 @@
-<div class="shippingInfo">
+<div class="shippingInfo-container">
     <div class="shippingNo">
       Shipment No. 1094442
     </div>
 
-    <div class="shippingStatus">
-      Delivered
+    <div class="shipping-result" *ngIf="isNotFoundTrack == false">
+      <div class="shippingStatus">
+        Delivered
+      </div>
+
+      <div class="shipping-progress-bar">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+      </div>
+
+      <div class="shipping-time">
+        Your shipper requested a pickup. Bosta will pick it up soon Wed, 19 May 2021
+      </div>
+
+      <div class="last-update">
+        (Last update since 633 day ago.)
+      </div>
+
     </div>
 
-    <div class="shipping-progress-bar">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
+    <div class="error-box" *ngIf="isNotFoundTrack == true">
+      <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+      {{errorMessage}}
     </div>
 
-    <div class="shipping-time">
-      Your shipper requested a pickup. Bosta will pick it up soon Wed, 19 May 2021
-    </div>
-
-    <div class="last-update">
-      (Last update since 633 day ago.)
-    </div>
 
 </div>
+
+

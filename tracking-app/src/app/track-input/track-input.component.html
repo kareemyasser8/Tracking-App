@@ -4,12 +4,17 @@
   </div>
 
 
-  <div class="search-box">
-    <input type="text" placeholder="Tracking No.">
-    <label for="" class="icon">
+  <form class="search-box" #f="ngForm" (ngSubmit)="Submit(f)">
+    <input type="text"
+     placeholder="Tracking No."
+     name="TrackingNum"
+     #TrackingNum
+     ngModel
+    >
+    <button for="" class="icon">
       <i class="fa fa-search"></i>
-    </label>
-  </div>
+    </button>
+  </form>
 
 
 </div>
