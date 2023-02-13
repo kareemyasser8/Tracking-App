@@ -10,6 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ShippingInfoComponent } from './shipping-info/shipping-info.component';
 import { TrackInputComponent } from './track-input/track-input.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { DatePipe } from '@angular/common'
 
 `(tracking number to be used: 6636234, 7234258, 9442984,1094442`
 
@@ -28,6 +29,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     HttpClientModule,
   ],
   providers: [
+    DatePipe,
     TrackService
   ],
   bootstrap: [AppComponent]

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'track-input',
   templateUrl: './track-input.component.html',
@@ -8,14 +10,17 @@ export class TrackInputComponent implements OnInit {
 
   inputTrackNo: string = '';
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
   Submit(f): void {
     this.inputTrackNo = f.value.TrackingNum;
-    console.log(this.inputTrackNo);
+    this.router.navigate(
+      ['tracking-shipments/'],
+      { queryParams: { shippment_number: this.inputTrackNo } }
+    )
     this.inputTrackNo = '';
   }
 

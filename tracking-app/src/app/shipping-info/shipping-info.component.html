@@ -1,26 +1,69 @@
 <div class="shippingInfo-container">
     <div class="shippingNo">
-      Shipment No. 1094442
+      Shipment No. {{desiredShippingNo}}
     </div>
 
     <div class="shipping-result" *ngIf="isNotFoundTrack == false">
       <div class="shippingStatus">
-        Delivered
+        <div *ngIf="trackData.state === 'DELIVERED_TO_SENDER'">Returned</div>
+        <div *ngIf="trackData.state === 'DELIVERED'">Delivered</div>
       </div>
 
       <div class="shipping-progress-bar">
-          <div class="bar1"></div>
-          <div class="bar2"></div>
-          <div class="bar3"></div>
+          <div class="bar1 filled"></div>
+          <div class="bar2 filled"></div>
+          <div class="bar3" [class.filled]="trackData.state === 'DELIVERED'"></div>
       </div>
 
       <div class="shipping-time">
-        Your shipper requested a pickup. Bosta will pick it up soon Wed, 19 May 2021
+        <div *ngIf="trackData.state === 'DELIVERED_TO_SENDER'">
+           Order is canceled and it will be returned back to the shipper
+           <span>{{trackData.timestamp | date:'fullDate'}}</span>
+        </div>
+
+        <div *ngIf="trackData.state === 'DELIVERED'">
+          Your shipper requested a pickup. Bosta will pick it up soon
+          <span>{{trackData.timestamp | date:'fullDate'}}</span>
+       </div>
+
       </div>
 
       <div class="last-update">
-        (Last update since 633 day ago.)
+        (Last update since {{estimateLastUpdateCountedDays(trackData.timestamp)}} day ago.)
       </div>
+
+      <div class="divider-line"></div>
+
+      <div class="activity-log-card">
+        <div class="activity-log-title">ACTIVITY LOG</div>
+        <div class="log">
+
+          <div class= "vertical-circle-line">
+            <div class="Vertical-line"></div>
+            <div class="log-circle"></div>
+          </div>
+
+
+          <div class="small-log">
+              <span>{{trackData.timestamp | date:'mediumDate'}}</span>
+              <div class= "log-cloud">
+
+                <div *ngIf="trackData.state === 'DELIVERED_TO_SENDER'">
+                  Order is canceled and it will be returned back to the shipper
+               </div>
+
+               <div *ngIf="trackData.state === 'DELIVERED'">
+                Your shipper requested a pickup. Bosta will pick it up soon
+                </div>
+
+                <time>{{trackData.timestamp | date:'shortTime'}}</time>
+              </div>
+          </div>
+
+        </div>
+
+      </div>
+
 
     </div>
 

@@ -4,8 +4,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'tracking-shipments', pathMatch: 'full' },
-  {path: 'tracking-shipments/shipment-number/:number', component: ShippingInfoComponent},
+  // {path: '', redirectTo: 'tracking-shipments', pathMatch: 'full' },
+  {path: 'tracking-shipments', component: ShippingInfoComponent},
   {path: '**', component: NotFoundComponent}
 ];
 
